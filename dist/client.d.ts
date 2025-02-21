@@ -52,12 +52,12 @@ export default class AgentApiClient {
      * Sends an asynchronous prompt to the agent
      * @param {string} sessionId agent session ID
      * @param {string} text user prompt
-     * @param {Object[]} [variables] optional context variables
+     * @param {Object[]} variables context variables
      * @param {MessageCallback} onMessage message callback function
      * @param {DisconnectCallback} [onDisconnect] optional disconnect callback function
      * @returns {EventSource} a SSE event source
      */
-    sendStreamingMessage(sessionId: string, text: string, variables?: any[], onMessage: MessageCallback, onDisconnect?: DisconnectCallback): EventSource;
+    sendStreamingMessage(sessionId: string, text: string, variables: any[], onMessage: MessageCallback, onDisconnect?: DisconnectCallback): EventSource;
     /**
      * Closes the agent session
      * @param {string} sessionId session ID

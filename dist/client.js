@@ -169,7 +169,7 @@ Response body: ${resBody}`
    * Sends an asynchronous prompt to the agent
    * @param {string} sessionId agent session ID
    * @param {string} text user prompt
-   * @param {Object[]} [variables] optional context variables
+   * @param {Object[]} variables context variables
    * @param {MessageCallback} onMessage message callback function
    * @param {DisconnectCallback} [onDisconnect] optional disconnect callback function
    * @returns {EventSource} a SSE event source
@@ -185,6 +185,9 @@ Response body: ${resBody}`
         },
         variables
       });
+      this.#logger.log(
+        `Agent API: sending async message ${sequenceId} with text: ${text}`
+      );
       const es = new createEventSource({
         method: "POST",
         url: `${this.#getBaseApiUrl()}/sessions/${sessionId}/messages/stream`,
