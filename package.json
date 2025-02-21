@@ -1,0 +1,59 @@
+{
+    "name": "salesforce-agent-api-client",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "A node client for the Salesforce Agent API",
+    "author": "pozil",
+    "license": "CC0-1.0",
+    "homepage": "https://github.com/pozil/agent-api-node-client",
+    "main": "dist/client.js",
+    "exports": {
+        ".": {
+            "require": "./dist/client.cjs",
+            "import": "./dist/client.js"
+        }
+    },
+    "scripts": {
+        "build": "tsup && tsc",
+        "format": "prettier --write '**/*.{css,html,js,json,md,yaml,yml}'",
+        "format:verify": "prettier --check '**/*.{css,html,js,json,md,yaml,yml}'",
+        "lint": "eslint \"src/**\"",
+        "prepare": "husky || true",
+        "precommit": "lint-staged",
+        "prepublishOnly": "npm run build"
+    },
+    "dependencies": {
+        "eventsource-client": "^1.1.3"
+    },
+    "devDependencies": {
+        "@chialab/esbuild-plugin-meta-url": "^0.18.2",
+        "@types/node": "^22.13.4",
+        "dotenv": "^16.4.7",
+        "eslint": "^9.18.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.3.0",
+        "prettier": "^3.4.2",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.3"
+    },
+    "lint-staged": {
+        "**/*.{css,html,js,json,md,yaml,yml}": [
+            "prettier --write"
+        ],
+        "**/{src,spec}/**/*.js": [
+            "eslint"
+        ]
+    },
+    "keywords": [
+        "salesforce",
+        "agenforce",
+        "api",
+        "ai"
+    ],
+    "files": [
+        "dist/*"
+    ],
+    "volta": {
+        "node": "22.14.0"
+    }
+}
