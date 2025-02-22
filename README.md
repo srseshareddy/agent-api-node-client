@@ -11,7 +11,7 @@ See the [API documentation](https://developer.salesforce.com/docs/einstein/genai
 
 Here's an example that will get you started quickly with streaming events.
 
-1. Install the client library and `dotenv` with
+1. Install the client library and `dotenv`:
 
     ```sh
     npm install salesforce-agent-api-client dotenv
@@ -20,10 +20,10 @@ Here's an example that will get you started quickly with streaming events.
 1. Create a `.env` file at the root of your project and [configure it](#configuration) with the the following template:
 
     ```properties
-    INSTANCE_URL=
-    CLIENT_ID=
-    CLIENT_SECRET=
-    AGENT_ID=
+    instanceUrl=
+    clientId=
+    clientSecret=
+    agentId=
     ```
 
 1. Create an `index.js` file with the following code:
@@ -38,10 +38,10 @@ Here's an example that will get you started quickly with streaming events.
     // Load config from .env file
     dotenv.config();
     const config = {
-        instanceUrl: process.env.INSTANCE_URL,
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        agentId: process.env.AGENT_ID
+        instanceUrl: process.env.instanceUrl,
+        clientId: process.env.clientId,
+        clientSecret: process.env.clientSecret,
+        agentId: process.env.agentId
     };
 
     // Configure Agent API client
