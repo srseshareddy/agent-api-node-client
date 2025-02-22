@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/salesforce-agent-api-client)](https://www.npmjs.com/package/salesforce-agent-api-client)
+
 # Node client for the Salesforce Agent API
 
 See the [API documentation](https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html) and the [Postman collection](https://www.postman.com/salesforce-developers/salesforce-developers/collection/gwv9bjy/agent-api-pilot) for more information on the Salesforce Agent API.
