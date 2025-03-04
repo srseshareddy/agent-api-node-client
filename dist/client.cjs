@@ -120,9 +120,11 @@ Response body: ${body2}`
         instanceConfig: {
           endpoint: this.#config.instanceUrl
         },
+        featureSupport: "Streaming",
         streamingCapabilities: {
           chunkTypes: ["Text"]
-        }
+        },
+        bypassUser: true
       });
       const headers = this.#getHeadersWithAuth();
       headers.append("Content-Type", "application/json");
