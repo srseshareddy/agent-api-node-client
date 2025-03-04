@@ -1,6 +1,6 @@
 {
     "name": "salesforce-agent-api-client",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "module",
     "description": "A node client for the Salesforce Agent API",
     "author": "pozil",
@@ -27,14 +27,14 @@
     },
     "devDependencies": {
         "@chialab/esbuild-plugin-meta-url": "^0.18.2",
-        "@types/node": "^22.13.5",
+        "@types/node": "^22.13.9",
         "dotenv": "^16.4.7",
         "eslint": "^9.21.0",
         "husky": "^9.1.7",
         "lint-staged": "^15.3.0",
-        "prettier": "^3.5.2",
-        "tsup": "^8.3.5",
-        "typescript": "^5.7.3"
+        "prettier": "^3.5.3",
+        "tsup": "^8.4.0",
+        "typescript": "^5.8.2"
     },
     "lint-staged": {
         "**/*.{css,html,js,json,md,yaml,yml}": [
