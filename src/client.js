@@ -125,9 +125,11 @@ export default class AgentApiClient {
                 instanceConfig: {
                     endpoint: this.#config.instanceUrl
                 },
+                featureSupport: 'Streaming',
                 streamingCapabilities: {
                     chunkTypes: ['Text']
-                }
+                },
+                bypassUser: true
             });
 
             const headers = this.#getHeadersWithAuth();
