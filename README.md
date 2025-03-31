@@ -150,7 +150,7 @@ const config = {
     /* your config goes here */
 };
 const logger = pino();
-const client = new PubSubApiClient(config, logger);
+const client = new AgentApiClient(config, logger);
 ```
 
 ## Reference
