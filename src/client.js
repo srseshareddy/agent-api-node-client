@@ -87,14 +87,13 @@ export default class AgentApiClient {
             const json = await response.json();
 
             // Check scopes
-            const scopes = new Set(json.scope.split(' '));
-            if (!REQUIRED_SCOPES.isSubsetOf(scopes)) {
-                throw new Error(
-                    `Missing OAuth scopes: required ${JSON.stringify([
-                        ...REQUIRED_SCOPES
-                    ])}, found ${JSON.stringify([...scopes])}`
-                );
-            }
+           const scopes = new Set(json.scope.split(' '));
+if (![...REQUIRED_SCOPES].every(scope => scopes.has(scope))) {
+    throw new Error(
+        `Missing OAuth scopes: required ${JSON.stringify([...REQUIRED_SCOPES])}, found ${JSON.stringify([...scopes])}`
+    );
+}
+
 
             // Save auth info
             this.#authInfo = {

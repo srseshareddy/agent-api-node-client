@@ -55,13 +55,11 @@ Response body: ${body2}`
       }
       const json = await response.json();
       const scopes = new Set(json.scope.split(" "));
-      if (!REQUIRED_SCOPES.isSubsetOf(scopes)) {
-        throw new Error(
-          `Missing OAuth scopes: required ${JSON.stringify([
-            ...REQUIRED_SCOPES
-          ])}, found ${JSON.stringify([...scopes])}`
-        );
-      }
+if (![...REQUIRED_SCOPES].every(scope => scopes.has(scope))) {
+    throw new Error(
+        `Missing OAuth scopes: required ${JSON.stringify([...REQUIRED_SCOPES])}, found ${JSON.stringify([...scopes])}`
+    );
+}
       this.#authInfo = {
         accessToken: json.access_token,
         apiInstanceUrl: json.api_instance_url
